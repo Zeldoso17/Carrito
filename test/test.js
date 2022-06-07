@@ -2,29 +2,6 @@ const assert = require('assert');
 const { describe } = require('mocha');
 let Products = require('../models/productos');
 
-const productoss = [
-    {
-        id: 1,
-        nombre: 'Camisa',
-        precio: 15.5,
-    },
-    {
-        id: 2,
-        nombre: 'Pantalon',
-        precio: 30.5,
-    },
-    {
-        id: 3,
-        nombre: 'Zapatos',
-        precio: 40.5,
-    },
-    {
-        id: 4,
-        nombre: 'Gorra',
-        precio: 10.5,
-    }
-]
-
 describe('Get all products', function(){
     it('it must to return all prodcts in the productos file', function(){
         let productsBD = new Products();
