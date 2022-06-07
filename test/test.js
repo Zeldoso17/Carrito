@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { describe } = require('mocha');
 let Products = require('../models/productos');
 
 describe('Get all products', function(){
@@ -8,6 +7,7 @@ describe('Get all products', function(){
         productsBD.products.forEach((product) => {
             console.log(product);
         })
+        assert.deepEqual(productsBD.products, [{id: 1, nombre: 'Camisa', precio: 15.5}, {id: 2, nombre: 'Pantalon', precio: 30.5}, {id: 3, nombre: 'Zapatos', precio: 40.5}, {id: 4, nombre: 'Gorra', precio: 10.5}]);
     })
 })
 
@@ -20,6 +20,7 @@ describe('add new product', function() {
             precio: 100.5,
         })
         productsBD.listAllProducts();
+        assert.deepEqual(productsBD.products, [{id: 1, nombre: 'Camisa', precio: 15.5}, {id: 2, nombre: 'Pantalon', precio: 30.5}, {id: 3, nombre: 'Zapatos', precio: 40.5}, {id: 4, nombre: 'Gorra', precio: 10.5}, {id: 5, nombre: 'Celular', precio: 100.5}]);
     })
 })
 
@@ -33,6 +34,7 @@ describe('update a product', function() {
             }
             console.log(product);
         })
+        assert.deepEqual(productsBD.products, [{id: 1, nombre: 'Camisa', precio: 15.5}, {id: 2, nombre: 'PS5', precio: 100}, {id: 3, nombre: 'Zapatos', precio: 40.5}, {id: 4, nombre: 'Gorra', precio: 10.5}]);
     })
 })
 
