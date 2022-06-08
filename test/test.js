@@ -37,6 +37,14 @@ describe('update a product', (() => {
     })
 }))
 
+describe('delete a product', (() => {
+    it('it must to delete a product in the productos file', () => {
+        productsBD.products.splice(3, 1);
+        productsBD.listAllProducts();
+        assert.deepEqual(productsBD.products, [{id: 1, nombre: 'Camisa', precio: 15.5}, {id: 2, nombre: 'PS5', precio: 100}, {id: 3, nombre: 'Zapatos', precio: 40.5}, {id: 5, nombre: 'Celular', precio: 100.5}]);
+    })
+}))
+
 
 
 
