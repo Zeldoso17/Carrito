@@ -1,9 +1,10 @@
 const assert = require('assert');
 let Products = require('../models/productos');
 
+let productsBD = new Products();
+
 describe('Get all products', function(){
     it('it must to return all prodcts in the productos file', function(){
-        let productsBD = new Products();
         productsBD.products.forEach((product) => {
             console.log(product);
         })
@@ -13,7 +14,6 @@ describe('Get all products', function(){
 
 describe('add new product', function() {
     it('it must to add a new product in the productos file', function() {
-        let productsBD = new Products();
         productsBD.products.push({
             id: 5,
             nombre: 'Celular',
@@ -26,7 +26,6 @@ describe('add new product', function() {
 
 describe('update a product', function() {
     it('it must to update a product in the productos file', function() {
-        let productsBD = new Products();
         productsBD.products.forEach((product) => {
             if(product.id === 2) {
                 product.nombre = 'PS5';
@@ -34,7 +33,7 @@ describe('update a product', function() {
             }
             console.log(product);
         })
-        assert.deepEqual(productsBD.products, [{id: 1, nombre: 'Camisa', precio: 15.5}, {id: 2, nombre: 'PS5', precio: 100}, {id: 3, nombre: 'Zapatos', precio: 40.5}, {id: 4, nombre: 'Gorra', precio: 10.5}]);
+        assert.deepEqual(productsBD.products, [{id: 1, nombre: 'Camisa', precio: 15.5}, {id: 2, nombre: 'PS5', precio: 100}, {id: 3, nombre: 'Zapatos', precio: 40.5}, {id: 4, nombre: 'Gorra', precio: 10.5}, {id: 5, nombre: 'Celular', precio: 100.5}]);
     })
 })
 
